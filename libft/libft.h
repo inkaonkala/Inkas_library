@@ -6,28 +6,35 @@
 /*   By: iniska <iniska@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:04:55 by iniska            #+#    #+#             */
-/*   Updated: 2024/05/11 12:38:10 by iniska           ###   ########.fr       */
+/*   Updated: 2023/11/09 10:25:04 by iniska           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// for getnetline
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 9
+#  define BUFFER_SIZE 1
 # endif
 
+# ifndef MAXFD
+# define MAXFD 100
+# endif
+
+//#includes for for BONUS PART
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include <string.h>
+# include <stdio.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-	char			*s_line;
-}					t_list;
+	char			*s_line; //for getnextline
+}	t_list;
 
 // listaa kaikki functiot:
 int		ft_isalpha(int a);
@@ -40,7 +47,8 @@ int		ft_tolower(int c);
 int		ft_strncmp(const char*s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t len);
 int		ft_atoi(const char *str);
-int		ft_strcmp(const char *s1, const char *s2);
+
+bool	is_number(char *str);
 
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *s, int c);
@@ -52,9 +60,6 @@ char	*ft_strtrim(char const*s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_strcpy(char *dst, const char *src);
-char	*ft_strncpy(char *dst, const char *src, size_t len);
-char	*ft_strcat(char *dst, const char *src);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -85,19 +90,12 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 int		ft_lstsize(t_list *lst);
-
-//printf
-
 int		ft_printf(const char *format, ...);
-int		printchar(char c);
-int		printstr(char *s);
-int		print_digit(long n, int base, char specifier);
-int		ft_form(char specifier, va_list ap);
-int		print_address(unsigned long n);
 
-// GNL
+//for GNL
 
 char	*get_next_line(int fd);
+int		get_next_line_int(int fd, char **line);
 void	setitfree(t_list **list, t_list *clean_line, char *buf);
 t_list	*find_last_line(t_list *list);
 int		size_of_line(t_list *list);
