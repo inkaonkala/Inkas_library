@@ -6,7 +6,7 @@
 #    By: iniska <iniska@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 11:48:58 by iniska            #+#    #+#              #
-#    Updated: 2024/09/04 08:50:58 by iniska           ###   ########.fr        #
+#    Updated: 2024/09/04 08:54:06 by iniska           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC =  \
 	  ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
 	  ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_toupper.c \
 	  ft_strtrim.c ft_substr.c ft_tolower.c ft_split.c ft_putnbr_fd.c \
-	  ft_printf.c \
+	  ft_printf.c \ morehelpers.c \
 	  get_next_line.c get_next_line_utils.c \
 	  ft_form.c \ printchar.c \ printstr.c \ print_digit.c \ print_address.c
 

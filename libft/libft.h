@@ -6,7 +6,7 @@
 /*   By: iniska <iniska@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:04:55 by iniska            #+#    #+#             */
-/*   Updated: 2024/09/04 08:50:56 by iniska           ###   ########.fr       */
+/*   Updated: 2024/09/04 08:54:53 by iniska           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd( char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strncpy(char *dst, const char *src, size_t len);
+char	*ft_strcat(char *dst, const char *src);
+int		ft_strcmp(const char *s1, const char *s2);
 
 //bonus
 void	ft_lstadd_back(t_list **lst, t_list *new);
