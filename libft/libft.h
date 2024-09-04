@@ -6,7 +6,7 @@
 /*   By: iniska <iniska@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:04:55 by iniska            #+#    #+#             */
-/*   Updated: 2023/11/09 10:25:04 by iniska           ###   ########.fr       */
+/*   Updated: 2024/09/04 08:50:56 by iniska           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,13 @@ int		create_line(t_list **list, int fd);
 char	*save_line(t_list *list);
 void	copy_line(t_list *list, char *str);
 int		clean_list(t_list **list);
+
+//for printf
+
+int		printchar(char c);
+int		ft_form(char specifier, va_list ap);
+int		printstr(char *s);
+int		print_digit(long n, int base, char specifier);
+int		print_address(unsigned long n);
 
 #endif
